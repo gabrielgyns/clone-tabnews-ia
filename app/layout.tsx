@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "clone-tabnews-ia",
+  title: "TabNews",
 };
 
 export default function RootLayout({
@@ -11,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <header>TabNews</header>
+        {children}
+      </body>
     </html>
   );
 }
