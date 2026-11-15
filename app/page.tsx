@@ -3,7 +3,7 @@ import Confetti from "./confetti";
 async function getTotalContents() {
   const response = await fetch(
     "https://www.tabnews.com.br/api/v1/contents?per_page=1&strategy=new",
-    { cache: "no-store" },
+    { next: { revalidate: 60 } },
   ).catch(() => null);
 
   const total = Number(response?.headers.get("x-pagination-total-rows"));
